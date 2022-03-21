@@ -9,16 +9,16 @@ public:
 
     
     Node()
+        :data(NULL),next(nullptr)
     {
-        data = NULL;
-        next = NULL;
+
     }
 
     
     Node(T data)
+        :data(data),next(nulptr)
     {
-        this->data = data;
-        this->next = NULL;
+    
     }
 };
 

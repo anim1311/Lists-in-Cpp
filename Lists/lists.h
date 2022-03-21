@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
+#include<string>
 
+//custom header files
 #include"Node.h"
 
 #define DEBUG 1
@@ -126,6 +128,26 @@ public:
             return temp1->data;
         }
         // TODO- return something for the if and else if case
+    }
+
+    std::ostream& operator<<(ostream& stream, List<T> list){
+
+        Node<T>* temp = list[0];
+        std::string listPython = "[ ";
+
+
+        if (m_head == NULL) {
+            std::cout << "List empty" << std::endl;
+            return;
+        }
+
+
+        while (temp != NULL) {
+            listPython+=temp->data+", ";
+            temp = temp->next;
+        }
+        listPython+="]";
+        stream<< listPython<<std::endl;
     }
 
     ~List()
